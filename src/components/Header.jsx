@@ -3,13 +3,10 @@ import Nav from './Nav'
 
 export default function Header() {
     return(
-        <nav>
+        <header>
           <img src={logo} alt="logo" />
-          <ul>
-            <Nav />
-          </ul>
+          <Nav />
           <button>Вход</button>
-          
-        </nav>
+        </header>
     )
 }
