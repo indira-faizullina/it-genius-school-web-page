@@ -1,11 +1,11 @@
-export default function Direction() {
+export default function Direction({ title, age, description, img }) {
     return(
         <div>
-            <h4>Python</h4>
-            <span>с 10 лет</span>
-            <p>Программирование на Python. Доступным языком для детей и подростков.</p>
-            <img src="" alt="" />
-            <button>записаться</button>
+            <h4>{title}</h4>
+            <span>{age}</span>
+            <p>{description}</p>
+            <img src={`/${img}.jpg`} alt={`изображение направления ${title}`} />
+            <button>Записаться на пробный урок</button>
         </div>
     )
 }

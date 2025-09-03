@@ -5,7 +5,9 @@ export default function Nav() {
         <nav>
             
         <ul>
-            {nav.map(navItem => <li id={navItem.title}><a href={navItem.link}>{navItem.title}</a></li>)}
+            {nav.map((navItem, index) => <li key={index}>
+                <a href={navItem.link}>{navItem.title}</a>
+                </li>)}
         </ul>
         </nav>
     )
