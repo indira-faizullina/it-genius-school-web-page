@@ -1,3 +1,5 @@
+import Button from "./Button/Button"
+
 export default function Direction({ title, age, description, img }) {
     return(
         <div>
@@ -5,7 +7,7 @@ export default function Direction({ title, age, description, img }) {
             <span>{age}</span>
             <p>{description}</p>
             <img src={`/${img}.jpg`} alt={`изображение направления ${title}`} />
-            <button>Записаться на пробный урок</button>
+            <Button>Записаться на пробный урок</Button>
         </div>
     )
 }
