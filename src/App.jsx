@@ -3,6 +3,7 @@ import Direction from "./components/Direction"
 import { directions } from './data.js'
 
 export default function App() {
+
   return (
     <>
     <Header/>

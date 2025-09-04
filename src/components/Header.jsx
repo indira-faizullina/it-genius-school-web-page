@@ -7,7 +7,7 @@ export default function Header() {
         <header>
           <img src={logo} alt="logo" />
           <Nav />
-          <Button>Вход</Button>
+          <Button onClick={() => console.log('Вход')}>Вход</Button>
         </header>
     )
 }
