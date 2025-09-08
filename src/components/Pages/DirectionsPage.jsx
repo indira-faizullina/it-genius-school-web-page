@@ -10,7 +10,7 @@ export default function DirectionsPage() {
         useCurrentDirection(title)
       }
     
-    if(currentDirection === '') {
+    if(!currentDirection) {
       return(
           <section>
               <h1>Наши направления</h1>
