@@ -16,10 +16,6 @@ export const nav = [
         page: 'TeamPage',
     },
     {
-        title: 'Цена',
-        page: 'PriceListPage',
-    },
-    {
         title: 'Отзывы',
         page: 'ReviewsPage',
     }

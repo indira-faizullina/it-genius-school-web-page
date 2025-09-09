@@ -1,5 +1,6 @@
 import { directions } from '../../data.js'
 import Button from '../Button/Button.jsx'
+import SingUpForm from '../SingUpForm.jsx'
 import { useState } from "react"
 
 export default function DirectionsPage() {
@@ -26,7 +27,9 @@ export default function DirectionsPage() {
           </section>
       )
     } else if(currentDirection) {
-console.log(currentDirection)
+      return(
+        <SingUpForm chooseDirection={currentDirection} directions={directions}/>
+      )
     }
     
 }

@@ -3,7 +3,6 @@ import MainSection from "./components/MainSection.jsx"
 import DirectionsPage from "./components/Pages/DirectionsPage.jsx"
 import ProjectsPage from "./components/Pages/ProjectsPage.jsx"
 import TeamPage from "./components/Pages/TeamPage.jsx"
-import PriceListPage from "./components/Pages/PriceListPage.jsx"
 import ReviewsPage from "./components/Pages/ReviewsPage.jsx"
 import { useState } from "react"
 
@@ -18,7 +17,6 @@ const [contentType, setContentType] = useState('MainSection')
         {contentType === 'DirectionsPage' && <DirectionsPage/>}
         {contentType === 'ProjectsPage' && <ProjectsPage/>}
         {contentType === 'TeamPage' && <TeamPage/>}
-        {contentType === 'PriceListPage' && <PriceListPage/>}
         {contentType === 'ReviewsPage' && <ReviewsPage/>}
        </> 
   )  
