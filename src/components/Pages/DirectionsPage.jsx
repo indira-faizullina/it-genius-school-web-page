@@ -7,9 +7,9 @@ export default function DirectionsPage() {
     
     const [currentDirection, useCurrentDirection] = useState('')
     
-      const handleClick = function(title) {
-        useCurrentDirection(title)
-      }
+    const handleClick = function(title) {
+      useCurrentDirection(title)
+    }
     
     if(!currentDirection) {
       return(
@@ -28,7 +28,7 @@ export default function DirectionsPage() {
       )
     } else if(currentDirection) {
       return(
-        <SingUpForm chooseDirection={currentDirection} directions={directions}/>
+        <SingUpForm choosedDirection={currentDirection} directions={directions}/>
       )
     }
     
