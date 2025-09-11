@@ -10,7 +10,7 @@ export default function SingUpForm({ choosedDirection, directions}) {
         userChoosedDirection: choosedDirection,
     })
 
-    const [hasModal, setHasModal] = useState(false )
+    const [hasModal, setHasModal] = useState(false)
 
     const handleInputChange = function(event) {
         const {name, value} = event.target
@@ -30,14 +30,15 @@ export default function SingUpForm({ choosedDirection, directions}) {
     const handleSubmit = function(event) {
         event.preventDefault()
         setHasModal(true)
-        setTimeout(() => {
-            setHasModal(false)
-            setForm({
-                userName: '',
-                userPhone: '',
-                userChoosedDirection: choosedDirection,
-            })
-        }, 3000)
+    }
+
+    const handleCloseModal = function() {
+        setForm({
+            userName: '',
+            userPhone: '',
+            userChoosedDirection: choosedDirection,
+        })
+        setHasModal(false)
     }
 
     return (
@@ -53,14 +54,13 @@ export default function SingUpForm({ choosedDirection, directions}) {
             <Button>Связаться со мной</Button>
         </form>
         <Modal open={hasModal}>
-            <div>
                 <h2>Спасибо!</h2>
                 <p>Совсем скоро мы свяжемся с вами</p>
                 <p>Отправленные данные:</p>
                 <p>Имя:{form.userName}</p>
                 <p>Телефон:{form.userPhone}</p>
                 <p>Направление:{form.userChoosedDirection}</p>
-            </div>
+                <Button onClick={handleCloseModal}>Закрыть</Button>
         </Modal>
         </>
     )
