@@ -20,7 +20,7 @@ export default function DirectionsPage() {
                       <h4>{direction.title}</h4>
                       <span>{direction.age}</span>
                       <p>{direction.description}</p>
-                      <img src={`/${direction.img}.jpg`} alt={`изображение направления ${direction.title}`} />
+                      <img style={{width: '500px'}}src={`/${direction.img}.jpg`} alt={`изображение направления ${direction.title}`} />
                       <Button onClick={() => handleClick(direction.title)}>Записаться на пробный урок</Button>
                   </div>
                 )}
