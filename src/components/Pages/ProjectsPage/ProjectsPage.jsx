@@ -1,3 +1,4 @@
+import classes from './ProjectsPage.module.css'
 import { useEffect, useState } from "react"
 
 export default function ProjectsPage() {
@@ -20,15 +21,17 @@ useEffect(() => {
     return(
         <>
         <h1>Проекты наших студентов</h1>
+        <div className={classes.container}>
         {loading && <p>Loading...</p>}
         {!loading && projects.map((project, i) => (
-            <div key={i}>
+            <div key={i} className={classes.item}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <img src={project.img} alt="" />
                 <p>{project.author}</p>
             </div>
         ))}
+        </div>
         </>
     )
 }

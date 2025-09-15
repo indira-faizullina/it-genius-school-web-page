@@ -1,3 +1,4 @@
+import classes from './TeamPage.module.css'
 import { useEffect, useState } from "react"
 
 export default function TeamPage() {
@@ -20,6 +21,7 @@ useEffect(() => {
     return(
         <>
         <h1>Наша команда</h1>
+        <div className={classes.container}>
         {loading && <p>Loading...</p>}
         {!loading && persons.map((person, i) => (
             <div key={i}>
@@ -28,6 +30,7 @@ useEffect(() => {
                 <p>{person.description}</p>
             </div>
         ))}
+        </div>
         </>
     )
 }

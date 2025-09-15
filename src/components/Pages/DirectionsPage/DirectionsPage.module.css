@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+}
+
+.item {
+    border: 1px solid #bbbbbb;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.item:hover {
+        border: 3px solid #79b585;
+        background-color: #8deba0;
+}
