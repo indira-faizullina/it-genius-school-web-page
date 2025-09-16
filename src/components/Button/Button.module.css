@@ -5,14 +5,14 @@ button {
   font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #73d13d;
-  color: #111;
+  background-color: #4f7dce;
+  color: rgba(14, 15, 14, 0.9);
   cursor: pointer;
   transition: border-color 0.25s;
   max-width: 200px;
 }
 
 button:hover {
-    background-color: #389e0d;
-    color: #eee;
+    background-color: #1b3768;
+    color: #f8f6f6;
   }

@@ -1,0 +1,39 @@
+.formWrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: rgb(16, 16, 99);
+}
+
+.inputWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    margin-bottom: 5px;
+    width: 100%;
+    color:rgb(16, 16, 99); ;
+}
+
+.input {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 20px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(154, 150, 172);
+    color: rgba(14, 15, 14, 0.9);
+}

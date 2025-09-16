@@ -5,6 +5,7 @@ import ProjectsPage from "./components/Pages/ProjectsPage/ProjectsPage.jsx"
 import TeamPage from "./components/Pages/TeamPage/TeamPage.jsx"
 import ReviewsPage from "./components/Pages/ReviewsPage.jsx"
 import { useState } from "react"
+import RegForm from "./components/RegForm/RegForm.jsx"
 
 export default function App() {
 
@@ -18,6 +19,7 @@ const [contentType, setContentType] = useState('MainSection')
         {contentType === 'ProjectsPage' && <ProjectsPage/>}
         {contentType === 'TeamPage' && <TeamPage/>}
         {contentType === 'ReviewsPage' && <ReviewsPage/>}
+        {contentType === 'RegForm' && <RegForm/>}
        </> 
   )  
 }
