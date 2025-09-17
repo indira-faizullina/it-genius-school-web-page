@@ -28,7 +28,6 @@ h2 {
 
 .input {
     width: 100%;
-    margin-bottom: 30px;
     height: 20px;
     padding: 10px 20px;
     border: 1px solid transparent;
@@ -36,4 +35,9 @@ h2 {
     outline: none;
     background-color: rgb(154, 150, 172);
     color: rgba(14, 15, 14, 0.9);
+}
+
+.error {
+    color: rgb(204, 8, 8);
+    font-size: 0.7rem;
 }

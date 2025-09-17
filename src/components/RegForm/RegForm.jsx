@@ -21,7 +21,7 @@ export default function RegForm() {
     })
 
     const submitForm = (data) => {
-        console.log({data})
+        console.log(data)
         reset()
     }
 
@@ -31,18 +31,22 @@ export default function RegForm() {
             <div className={classes.inputWrapper}>
                 <label htmlFor="name" className={classes.label}>Имя пользователя</label>
                 <input {...register("userName")} type="text" id="name" placeholder="Введите ваше имя" className={classes.input}></input>
+                <p className={classes.error}>{errors.userName?.message}</p>
             </div>
             <div className={classes.inputWrapper}>
                 <label htmlFor="email" className={classes.label}>Почта</label>
                 <input {...register("email")} type="email" id="email" placeholder="Введите e-mail" className={classes.input}></input>
+                <p className={classes.error}>{errors.email?.message}</p>
             </div>
             <div className={classes.inputWrapper}>
                 <label htmlFor="phone" className={classes.label}>Телефон</label>
                 <input {...register("phone")} type="tel" id="phone" className={classes.input}></input>
+                <p className={classes.error}>{errors.phone?.message}</p>
             </div>
             <div className={classes.inputWrapper}>
                 <label htmlFor="password" className={classes.label}>Пароль</label>
                 <input {...register("password")} type="password" id="password" className={classes.input}></input>
+                <p className={classes.error}>{errors.password?.message}</p>
             </div>
             <Button onClick={handleSubmit(submitForm)}>Зарегистрироваться</Button>
         </form>
