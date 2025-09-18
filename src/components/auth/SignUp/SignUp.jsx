@@ -1,10 +1,12 @@
-import Button from '../Button/Button'
-import classes from './RegForm.module.css'
+import Button from '../../Button/Button'
+import classes from './SignUp.module.css'
 import { useForm } from 'react-hook-form'
-import { schema } from './schema'
+import { schema } from './schemaSignUp'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../../firebase'
 
-export default function RegForm() {
+export default function SignUp({onChange}) {
 
     const {
         register,
@@ -21,9 +23,16 @@ export default function RegForm() {
     })
 
     const submitForm = (data) => {
-        console.log(data)
-        reset()
+        createUserWithEmailAndPassword(auth, data.email, data.password)
+        .then((user) => {
+            reset()
+            onChange('MainSection')
+        })
+        .catch((errors) => {
+            console.log(errors)
+        })
     }
+    
 
     return(
         <form onSubmit={handleSubmit(submitForm)} className={classes.formWrapper}>

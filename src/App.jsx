@@ -5,7 +5,9 @@ import ProjectsPage from "./components/Pages/ProjectsPage/ProjectsPage.jsx"
 import TeamPage from "./components/Pages/TeamPage/TeamPage.jsx"
 import ReviewsPage from "./components/Pages/ReviewsPage.jsx"
 import { useState } from "react"
-import RegForm from "./components/RegForm/RegForm.jsx"
+import SignUp from "./components/auth/SignUp/SignUp.jsx"
+import SignIn from "./components/auth/SignIn/SignIn.jsx"
+import AuthDetails from "./components/auth/AuthDetails/AuthDetails.jsx"
 
 export default function App() {
 
@@ -19,7 +21,8 @@ const [contentType, setContentType] = useState('MainSection')
         {contentType === 'ProjectsPage' && <ProjectsPage/>}
         {contentType === 'TeamPage' && <TeamPage/>}
         {contentType === 'ReviewsPage' && <ReviewsPage/>}
-        {contentType === 'RegForm' && <RegForm/>}
+        {contentType === 'SignUp' && <SignUp onChange={(current) => setContentType(current)}/>}
+        {contentType === 'SignIn' && <SignIn onChange={(current) => setContentType(current)}/>}
        </> 
   )  
 }
