@@ -24,7 +24,7 @@ export default function AuthDetails({onChange}) {
         <div>
         {authUser ? (
             <div>
-                <span>Личный кабинет</span>
+                <span className={classes.link} onClick={() => onChange('Profile')}>Личный кабинет</span>
                 <Button onClick={() => {
                     signOut(auth)
                     setAuthUser(null)

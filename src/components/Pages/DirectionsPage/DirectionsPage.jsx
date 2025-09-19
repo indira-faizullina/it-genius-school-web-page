@@ -21,8 +21,10 @@ export default function DirectionsPage() {
                   <div key={index} className={classes.item}>
                       <h2>{direction.title}</h2>
                       <span>{direction.age}</span>
+                      <div className={classes.itemText}>
                       <p>{direction.description}</p>
-                      <img style={{width: '500px'}}src={`/${direction.img}.jpg`} alt={`изображение направления ${direction.title}`} />
+                      </div>
+                      <img className={classes.itemImg} src={`/${direction.img}.jpg`} alt={`изображение направления ${direction.title}`} />
                       <Button onClick={() => handleClick(direction.title)}>Записаться на пробный урок</Button>
                   </div>
                 )}
