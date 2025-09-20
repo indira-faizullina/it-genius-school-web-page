@@ -1,5 +1,5 @@
-import Header from "./components/Header/Header.jsx"
-import MainSection from "./components/MainSection/MainSection.jsx"
+import Header from "./components/UI/Header/Header.jsx"
+import MainSection from "./components/Pages/MainSection/MainSection.jsx"
 import DirectionsPage from "./components/Pages/DirectionsPage/DirectionsPage.jsx"
 import ProjectsPage from "./components/Pages/ProjectsPage/ProjectsPage.jsx"
 import TeamPage from "./components/Pages/TeamPage/TeamPage.jsx"

@@ -1,4 +1,4 @@
-import { mainPageData } from '../../data.js'
+import { mainPageData } from '../../../data.js'
 import classes from './MainSection.module.css'
 
 export default function MainSection() {
@@ -12,7 +12,9 @@ export default function MainSection() {
           (i % 2 !== 0) 
           ? classes.itemContainer 
           : classes.itemContainerReverse} key={i}>
-            <div className={classes.itemText}><p>{item.direction}</p></div>
+            <div className={classes.itemText}>
+              <h3>{item.title}</h3>
+              <p>{item.direction}</p></div>
           <img className={classes.itemImg} src={`/${item.img}.jpg`} alt="" />
         </div>
       ))}

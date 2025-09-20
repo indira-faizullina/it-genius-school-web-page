@@ -1,8 +1,10 @@
 import classes from './DirectionsPage.module.css'
 import { directions } from '../../../data.js'
-import Button from '../../Button/Button.jsx'
-import SingUpForm from '../../SingUpForm.jsx'
+import SingUpForm from '../SingUpForm.jsx'
+import Card from '../../UI/Card/Card.jsx'
+import Button from '../../UI/Button/Button.jsx'
 import { useState } from "react"
+
 
 export default function DirectionsPage() {
     
@@ -18,7 +20,7 @@ export default function DirectionsPage() {
               <h1>Наши направления</h1>
               <div className={classes.container}>
                 {directions.map((direction, index) =>
-                  <div key={index} className={classes.item}>
+                  <Card key={index}>
                       <h2>{direction.title}</h2>
                       <span>{direction.age}</span>
                       <div className={classes.itemText}>
@@ -26,7 +28,7 @@ export default function DirectionsPage() {
                       </div>
                       <img className={classes.itemImg} src={`/${direction.img}.jpg`} alt={`изображение направления ${direction.title}`} />
                       <Button onClick={() => handleClick(direction.title)}>Записаться на пробный урок</Button>
-                  </div>
+                  </Card>
                 )}
               </div>
           </section>

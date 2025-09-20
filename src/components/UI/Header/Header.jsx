@@ -2,7 +2,7 @@ import logo from '/logo.svg'
 import Nav from '../Nav/Nav'
 import Button from '../Button/Button'
 import classes from './Header.module.css'
-import AuthDetails from '../auth/AuthDetails/AuthDetails'
+import AuthDetails from '../../auth/AuthDetails/AuthDetails'
 
 export default function Header({onChange}) {
 

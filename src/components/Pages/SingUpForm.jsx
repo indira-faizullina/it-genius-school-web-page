@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Button from "./Button/Button";
-import Modal from "./Modal/Modal";
+import Button from "../UI/Button/Button";
+import Modal from "../UI/Modal/Modal"
+import Card from "../UI/Card/Card";
 
 export default function SingUpForm({ choosedDirection, directions}) {
 
@@ -43,6 +44,7 @@ export default function SingUpForm({ choosedDirection, directions}) {
 
     return (
         <>
+        <Card>
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">Ваше имя</label>
             <input type="text" id="name" name="userName" value={form.userName} onChange={handleInputChange}/>
@@ -53,6 +55,7 @@ export default function SingUpForm({ choosedDirection, directions}) {
             </select>
             <Button>Связаться со мной</Button>
         </form>
+        </Card>
         <Modal open={hasModal}>
                 <h2>Спасибо!</h2>
                 <p>Совсем скоро мы свяжемся с вами</p>

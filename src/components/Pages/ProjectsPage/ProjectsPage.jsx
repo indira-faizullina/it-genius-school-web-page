@@ -1,3 +1,4 @@
+import Card from '../../UI/Card/Card'
 import classes from './ProjectsPage.module.css'
 import { useEffect, useState } from "react"
 
@@ -24,12 +25,12 @@ useEffect(() => {
         <div className={classes.container}>
         {loading && <p>Loading...</p>}
         {!loading && projects.map((project, i) => (
-            <div key={i} className={classes.item}>
+            <Card key={i}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <img src={project.img} alt="" />
                 <p>{project.author}</p>
-            </div>
+            </Card>
         ))}
         </div>
         </>

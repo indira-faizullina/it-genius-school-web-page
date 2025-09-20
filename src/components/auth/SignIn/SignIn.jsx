@@ -1,4 +1,4 @@
-import Button from '../../Button/Button'
+import Button from '../../UI/Button/Button'
 import classes from './SignIn.module.css'
 import { useForm } from 'react-hook-form'
 import { schema } from './schemaSignIn'

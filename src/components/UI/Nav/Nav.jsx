@@ -1,4 +1,4 @@
-import { nav } from '../../data.js'
+import { nav } from '../../../data.js'
 import classes from './Nav.module.css'
 
 export default function Nav({onChange}) {
