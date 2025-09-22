@@ -2,22 +2,27 @@ export const nav = [
     {
         title: 'Главная',
         page: 'MainSection',
+        path: '/'
     },
     {
         title: 'Направления',
         page: 'DirectionsPage',
+        path: 'directions'
     },
     {
         title: 'Проекты студентов',
         page: 'ProjectsPage',
+        path: 'projects'
     },
     {
         title: 'Наша команда',
         page: 'TeamPage',
+        path: 'team'
     },
     {
         title: 'Отзывы',
         page: 'ReviewsPage',
+        path: 'reviews'
     }
 ]
 

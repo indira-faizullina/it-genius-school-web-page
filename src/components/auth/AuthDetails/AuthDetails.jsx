@@ -3,10 +3,12 @@ import classes from './AuthDetails.module.css'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../../firebase'
 import Button from '../../UI/Button/Button'
+import { useNavigate } from 'react-router'
 
-export default function AuthDetails({onChange}) {
+export default function AuthDetails() {
 
     const [authUser, setAuthUser] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const listen = onAuthStateChanged(auth, (user) => {
@@ -24,15 +26,15 @@ export default function AuthDetails({onChange}) {
         <div>
         {authUser ? (
             <div>
-                <span className={classes.link} onClick={() => onChange('Profile')}>Личный кабинет</span>
+                <span className={classes.link} onClick={() => navigate('/profile')}>Личный кабинет</span>
                 <Button onClick={() => {
                     signOut(auth)
                     setAuthUser(null)
-                    onChange('MainSection')
+                    navigate('/')
                 }}>Выход</Button>
             </div>
             ) 
-            : (<Button onClick={() => onChange('SignIn')}>Вход</Button>)}
+            : (<Button onClick={() => navigate('/signin')}>Вход</Button>)}
         </div>
     )
 }

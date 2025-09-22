@@ -1,20 +1,34 @@
 import classes from './DirectionsPage.module.css'
 import { directions } from '../../../data.js'
-import SingUpForm from '../SingUpForm.jsx'
+import CallBackForm from '../CallBackForm.jsx'
 import Card from '../../UI/Card/Card.jsx'
 import Button from '../../UI/Button/Button.jsx'
 import { useState } from "react"
+import { useNavigate } from 'react-router'
 
 
 export default function DirectionsPage() {
     
-    const [currentDirection, useCurrentDirection] = useState('')
+    const [currentDirection, setCurrentDirection] = useState('')
+
+    const navigate = useNavigate()
     
     const handleClick = function(title) {
-      useCurrentDirection(title)
+      setCurrentDirection(title)
+      navigate('/callback', {
+          state: {
+            choosedDirection: {currentDirection}, 
+            directions: {directions}
+        }
+      }
+      )
     }
-    
-    if(!currentDirection) {
+
+    if(currentDirection) {
+      return(
+        <CallBackForm />
+      )
+    }
       return(
           <section>
               <h1>Наши направления</h1>
@@ -32,11 +46,5 @@ export default function DirectionsPage() {
                 )}
               </div>
           </section>
-      )
-    } else if(currentDirection) {
-      return(
-        <SingUpForm choosedDirection={currentDirection} directions={directions}/>
-      )
-    }
-    
+      ) 
 }

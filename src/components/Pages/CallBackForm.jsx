@@ -1,17 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal"
 import Card from "../UI/Card/Card";
+import { useLocation } from "react-router";
 
-export default function SingUpForm({ choosedDirection, directions}) {
+export default function CallBackForm() {
+
+    const location = useLocation()
+
+    const {choosedDirection, directions} = location.state || {}
 
     const [form, setForm] = useState({
         userName: '',
         userPhone: '',
-        userChoosedDirection: choosedDirection,
+        userChoosedDirection: '',
     })
 
+    const [isDataReady, setIsDataReady] = useState(false)
     const [hasModal, setHasModal] = useState(false)
+
+    useEffect(() => {
+        if(choosedDirection && directions) {
+            setForm((prev) => ({
+            ...prev, 
+            userChoosedDirection: { choosedDirection } 
+        }))
+        setIsDataReady(true)
+        }
+            console.log('choosedDirection', choosedDirection)
+    console.log('directions', directions)
+    }, [choosedDirection, directions])
 
     const handleInputChange = function(event) {
         const {name, value} = event.target
@@ -42,6 +60,11 @@ export default function SingUpForm({ choosedDirection, directions}) {
         setHasModal(false)
     }
 
+    if(!isDataReady) {
+        return(
+            <p>Загрузка данных...</p>
+        )
+    }
     return (
         <>
         <Card>
@@ -51,7 +74,7 @@ export default function SingUpForm({ choosedDirection, directions}) {
             <label htmlFor="tel">Телефон для связи</label>
             <input type="tel" id="tel" name="userPhone" value={form.userPhone} onChange={handleInputChange}/>
             <select defaultValue={choosedDirection} onChange={handleSelectChange}>
-                {directions.map((dir, i) => <option key={i} value={dir.title}>{dir.title}</option>)}
+                {directions.directions.map((dir, i) => <option key={i} value={dir.title}>{dir.title}</option>)}
             </select>
             <Button>Связаться со мной</Button>
         </form>

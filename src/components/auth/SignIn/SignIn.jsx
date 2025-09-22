@@ -6,10 +6,12 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../../firebase'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
-export default function SignIn({onChange}) {
+export default function SignIn() {
 
     const [isError, setIsError] = useState(false)
+    const navigate = useNavigate()
 
     const {
         register,
@@ -30,7 +32,7 @@ export default function SignIn({onChange}) {
         .then((user) => {
             reset()
             setIsError(false)
-            onChange('MainSection')
+            navigate('/')
         })
         .catch(() => setIsError(true))
     }
@@ -53,7 +55,7 @@ export default function SignIn({onChange}) {
             {isError && <p className={classes.error}>Неверный email или пароль</p>}
         </form>
         <div>
-            <p>Нет аккаунта? <span className={classes.link} onClick={() => onChange('SignUp')}>Зарегистрируйтесь</span></p>
+            <p>Нет аккаунта? <span className={classes.link} onClick={() => navigate('/signup')}>Зарегистрируйтесь</span></p>
         </div>
         </>
 

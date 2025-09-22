@@ -5,8 +5,11 @@ import { schema } from './schemaSignUp'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../../firebase'
+import { useNavigate } from 'react-router'
 
-export default function SignUp({onChange}) {
+export default function SignUp() {
+
+    const navigate = useNavigate()
 
     const {
         register,
@@ -26,7 +29,7 @@ export default function SignUp({onChange}) {
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((user) => {
             reset()
-            onChange('MainSection')
+            navigate('/')
         })
         .catch((errors) => {
             console.log(errors)
