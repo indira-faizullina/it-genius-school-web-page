@@ -1,6 +1,7 @@
 import Card from '../../UI/Card/Card'
 import classes from './ProjectsPage.module.css'
 import { useEffect, useState } from "react"
+import { Link } from 'react-router'
 
 export default function ProjectsPage() {
 
@@ -26,10 +27,12 @@ useEffect(() => {
         {loading && <p>Loading...</p>}
         {!loading && projects.map((project, i) => (
             <Card key={i}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <img src={project.img} alt="" />
-                <p>{project.author}</p>
+                <Link to={`/projects/${project.id}`}>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <img src={project.img} alt="" />
+                    <p>{project.author}</p>
+                </Link>
             </Card>
         ))}
         </div>

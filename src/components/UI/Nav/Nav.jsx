@@ -1,18 +1,18 @@
-import { useNavigate } from 'react-router'
+import { NavLink } from 'react-router'
 import { nav } from '../../../data.js'
 import classes from './Nav.module.css'
 
 export default function Nav() {
 
-    const navigate = useNavigate()
+    const setClassName = ({isActive}) => 
+        isActive ? `${classes.navlink} ${classes.active}` : classes.navlink
 
     return(
         <nav className={classes.nav}> 
-        <ul className={classes.ul}>
-            {nav.map((navItem, index) => <li key={index} onClick={() => navigate(navItem.path) } className={classes.li}>
+            {nav.map((navItem, index) => 
+            <NavLink key={index} to={navItem.path} className={setClassName}>
                 {navItem.title}
-                </li>)}
-        </ul>
+            </NavLink>)}
         </nav>
     )
 }

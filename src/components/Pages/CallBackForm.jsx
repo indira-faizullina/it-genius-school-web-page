@@ -3,33 +3,30 @@ import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal"
 import Card from "../UI/Card/Card";
 import { useLocation } from "react-router";
+import { directions } from "../../data";
 
 export default function CallBackForm() {
-
+    
     const location = useLocation()
-
-    const {choosedDirection, directions} = location.state || {}
-
+    const [isDataReady, setIsDataReady] = useState(false)
+    
     const [form, setForm] = useState({
         userName: '',
         userPhone: '',
         userChoosedDirection: '',
     })
 
-    const [isDataReady, setIsDataReady] = useState(false)
-    const [hasModal, setHasModal] = useState(false)
-
     useEffect(() => {
-        if(choosedDirection && directions) {
-            setForm((prev) => ({
-            ...prev, 
-            userChoosedDirection: { choosedDirection } 
-        }))
+        setForm({
+            userName: '',
+            userPhone: '',
+            userChoosedDirection: location?.state?.choosedDirection || '',
+        })
         setIsDataReady(true)
-        }
-            console.log('choosedDirection', choosedDirection)
-    console.log('directions', directions)
-    }, [choosedDirection, directions])
+}, [location.state])
+
+    
+    const [hasModal, setHasModal] = useState(false)
 
     const handleInputChange = function(event) {
         const {name, value} = event.target
@@ -48,6 +45,10 @@ export default function CallBackForm() {
 
     const handleSubmit = function(event) {
         event.preventDefault()
+        if(!form.userName.trim() || !form.userPhone.trim()) {
+            console.log('error')
+            return
+        }
         setHasModal(true)
     }
 
@@ -55,7 +56,7 @@ export default function CallBackForm() {
         setForm({
             userName: '',
             userPhone: '',
-            userChoosedDirection: choosedDirection,
+            userChoosedDirection: '',
         })
         setHasModal(false)
     }
@@ -73,8 +74,8 @@ export default function CallBackForm() {
             <input type="text" id="name" name="userName" value={form.userName} onChange={handleInputChange}/>
             <label htmlFor="tel">Телефон для связи</label>
             <input type="tel" id="tel" name="userPhone" value={form.userPhone} onChange={handleInputChange}/>
-            <select defaultValue={choosedDirection} onChange={handleSelectChange}>
-                {directions.directions.map((dir, i) => <option key={i} value={dir.title}>{dir.title}</option>)}
+            <select defaultValue={form.userChoosedDirection} onChange={handleSelectChange}>
+                {directions.map((dir, i) => <option key={i} value={dir.title}>{dir.title}</option>)}
             </select>
             <Button>Связаться со мной</Button>
         </form>

@@ -1,12 +1,12 @@
-import Header from "./components/UI/Header/Header.jsx"
-import AppRoutes from "./routes/routes.jsx"
+BrowserRouter
+import { BrowserRouter } from "react-router"
+import AppRoutes from "./routes/AppRoutes.jsx"
 
 export default function App() {
 
   return(
-       <>
-        <Header />
+      <BrowserRouter>
         <AppRoutes/>
-       </> 
+      </BrowserRouter>
   )  
 }

@@ -17,7 +17,7 @@ export default function DirectionsPage() {
       setCurrentDirection(title)
       navigate('/callback', {
           state: {
-            choosedDirection: {currentDirection}, 
+            choosedDirection: title, 
             directions: {directions}
         }
       }

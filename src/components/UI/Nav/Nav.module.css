@@ -1,21 +1,23 @@
 nav {
     text-align: center;
     align-items: center;
-}
-
-ul {
     display: flex;
     justify-content: space-between;
-    list-style: none;
     padding: 10px;
 }
 
-li {
+.navlink {
     margin-left: 20px;
+    text-decoration: none;
+    padding: 5px;
 }
 
-li:hover {
-    color: #0000af;
-    cursor: pointer;
-    border-bottom: 1px solid #0000af;
+.navlink:hover {
+    border-top: 1px solid #7b7cc4;
+}
+
+.active {
+    background: #dfdfe6;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+
 }
