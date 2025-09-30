@@ -1,12 +1,31 @@
-# React + Vite
+# IT-Genius-school - Web-страница онлайн школы программирования для детей и подростков.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SPA-приложение на React с авторизацией через Firebase**
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Firestore-orange)](https://firebase.google.com/)
+[![Deployment](https://img.shields.io/badge/Deployed%20on-Netlify-success)](https://netlify.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Демо
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Технологии
+
+- **Безопасная аутентификация** Firebase Auth с защищенными маршрутами
+- **Работа с формами** - Валидация с Yup, обработка состояний и ошибок
+- **React Router v7** для навигации
+- **db.json** для демонстрации работы с бэкенд
+- **CI/CD** автоматизированный деплой через Netlify
+
+## 🚀 Запуск проекта
+
+```bash
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для production
+npm run build
+```
