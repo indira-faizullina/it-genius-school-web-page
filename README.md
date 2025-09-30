@@ -1,13 +1,14 @@
-# IT-Genius-school - Web-страница онлайн школы программирования для детей и подростков.
+# IT-Genius School - Web-страница онлайн школы программирования для детей и подростков.
 
 **SPA-приложение на React с авторизацией через Firebase**
 
 [![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Firestore-orange)](https://firebase.google.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-Auth-orange)](https://firebase.google.com/)
 [![Deployment](https://img.shields.io/badge/Deployed%20on-Netlify-success)](https://netlify.com/)
 
 ## Демо
 
+https://it-genius-school-web-page.netlify.app/
 
 ## 🛠 Технологии
 
