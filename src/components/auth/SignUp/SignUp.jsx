@@ -27,7 +27,7 @@ export default function SignUp() {
 
     const submitForm = (data) => {
         createUserWithEmailAndPassword(auth, data.email, data.password)
-        .then((user) => {
+        .then(() => {
             reset()
             navigate('/')
         })

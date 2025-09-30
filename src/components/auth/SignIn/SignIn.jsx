@@ -29,7 +29,7 @@ export default function SignIn() {
 
     const logIn = (data) => {
         signInWithEmailAndPassword(auth, data.email, data.password)
-        .then((user) => {
+        .then(() => {
             reset()
             setIsError(false)
             navigate('/')
