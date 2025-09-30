@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import classes from './AuthDetails.module.css'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth } from '../../../firebase'
+import { auth } from '/src/firebase';
 import Button from '../../UI/Button/Button'
 import { useNavigate } from 'react-router'
 

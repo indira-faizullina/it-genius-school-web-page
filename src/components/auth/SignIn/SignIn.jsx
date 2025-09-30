@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { schema } from './schemaSignIn'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../../firebase'
+import { auth } from '/src/firebase';
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 
